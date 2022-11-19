@@ -92,7 +92,7 @@ const createGraph = () => {
     .attr('fill', d => '#000');
 
   node.append('svg:image')
-    .attr('xlink:href', d => `images/${d.id}.png`)
+    .attr('xlink:href', d => `images/${d.id.replace(/[^A-Za-z0-0.]+/g, '')}.png`)
     .attr('x', -radius)
     .attr('y', -radius)
     .attr('height', radius * 2)
