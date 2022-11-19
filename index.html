@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>WTA players' Instagram network graph</title>
+
+    <style type="text/css">
+    text {
+      font-size: 12px;
+      font-family: "Arial";
+    }
+    svg {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdn.jsdelivr.net/npm/d3@6"></script>
+    <script src="data.js"></script>
+    <script src="graph.js"></script>
+  </head>
+  <body>
+    <svg>
+      <defs>
+        <marker id="arrow" viewBox="0 -5 10 10" refX="38" refY="0" markerWidth="6" markerHeight="6" orient="auto">
+          <path fill="#000" d="M0,-5L10,0L0,5"></path>
+        </marker>
+        <marker id="arrow-mutual" viewBox="0 -5 10 10" refX="38" refY="0" markerWidth="6" markerHeight="6" orient="auto">
+          <path fill="#7814FF" d="M0,-5L10,0L0,5"></path>
+        </marker>
+        <marker id="arrow-following" viewBox="0 -5 10 10" refX="38" refY="0" markerWidth="6" markerHeight="6" orient="auto">
+          <path fill="#FF146A" d="M0,-5L10,0L0,5"></path>
+        </marker>
+        <marker id="arrow-followedBy" viewBox="0 -5 10 10" refX="38" refY="0" markerWidth="6" markerHeight="6" orient="auto">
+          <path fill="#14C8FF" d="M0,-5L10,0L0,5"></path>
+        </marker>
+      </defs>
+    </svg>
+    <div style="font-family: Arial; font-size: 10px;">
+      <div style="color: #FF146A;">A <i class="fa-solid fa-arrow-left-long"></i> B: A is followed by but does not follow B</div>
+      <div style="color: #7814FF;">A <i class="fa-solid fa-arrows-left-right"></i> B: A follows and is followed by B</div>
+      <div style="color: #14C8FF;">A <i class="fa-solid fa-arrow-right-long"></i> B: A follows but is not followed by B</div>
+      <div style="color: #000000;">double click to open Instagram profile</div>
+    </div>
+  </body>
+</html>
